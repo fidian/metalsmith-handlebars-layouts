@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "Tyler Akins"
+  },
+  "bugs": {
+    "url": "https://github.com/fidian/metalsmith-handlebars-layouts/issues"
+  },
+  "dependencies": {
+    "metalsmith-plugin-kit": "^1.1.4",
+    "handlebars": "^4.7.3",
+    "handlebars-wax": "^6.1.0",
+    "debug": "^4.1.1"
+  },
+  "description": "Metalsmith plugin that wraps pages in handlebars layouts.",
+  "homepage": "https://github.com/fidian/metalsmith-handlebars-layouts#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "metalsmith-handlebars-layouts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fidian/metalsmith-handlebars-layouts.git"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules/ package-lock.json"
+  },
+  "tags": [
+    "metalsmith",
+    "plugin",
+    "handlebars",
+    "template",
+    "layout"
+  ],
+  "version": "1.0.0"
+}
