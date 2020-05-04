@@ -95,7 +95,11 @@ module.exports = function(options) {
                 if (options[key].length) {
                     debug("Loading " + key);
                     options[key].forEach(v => {
-                        hb[key](v);
+                        try {
+                            hb[key](v);
+                        } catch (e) {
+                            console.log("Encountered error: " + e.toString()");
+                        }
                     });
                 } else {
                     debug("No config found for " + key);

@@ -6,10 +6,10 @@
     "url": "https://github.com/fidian/metalsmith-handlebars-layouts/issues"
   },
   "dependencies": {
-    "metalsmith-plugin-kit": "^1.1.4",
-    "handlebars": "^4.7.3",
+    "debug": "^4.1.1",
+    "handlebars": "^4.7.6",
     "handlebars-wax": "^6.1.0",
-    "debug": "^4.1.1"
+    "metalsmith-plugin-kit": "^1.1.4"
   },
   "description": "Metalsmith plugin that wraps pages in handlebars layouts.",
   "homepage": "https://github.com/fidian/metalsmith-handlebars-layouts#readme",
@@ -30,5 +30,5 @@
     "template",
     "layout"
   ],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
