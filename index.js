@@ -46,7 +46,9 @@ function loadTemplates(templateDir, hb) {
                 path.resolve(templateDir, dirEnt.name),
                 "utf8"
             );
-            templates[dirEnt.name.replace(/\.[^\.]*$/, '')] = hb.compile(contents);
+            templates[dirEnt.name.replace(/\.[^\.]*$/, "")] = hb.compile(
+                contents
+            );
         }
     });
 
@@ -60,7 +62,7 @@ function loadTemplates(templateDir, hb) {
  * @return {Function}
  */
 module.exports = function(options) {
-    const waxKeys = ['data', 'decorators', 'helpers', 'partials'];
+    const waxKeys = ["data", "decorators", "helpers", "partials"];
     var hb, templates;
 
     options = pluginKit.defaultOptions(
@@ -76,7 +78,7 @@ module.exports = function(options) {
         options
     );
 
-    waxKeys.forEach(key => {
+    waxKeys.forEach((key) => {
         if (!Array.isArray(options[key])) {
             const oldVal = options[key];
 
@@ -91,14 +93,17 @@ module.exports = function(options) {
     return pluginKit.middleware({
         before() {
             hb = handlebarsWax(handlebars.create());
-            waxKeys.forEach(key => {
+            waxKeys.forEach((key) => {
                 if (options[key].length) {
                     debug("Loading " + key);
-                    options[key].forEach(v => {
+                    options[key].forEach((v) => {
                         try {
                             hb[key](v);
                         } catch (e) {
-                            console.log("Encountered error: " + e.toString());
+                            console.log(
+                                "Encountered error during initialization: " +
+                                    e.toString()
+                            );
                         }
                     });
                 } else {
@@ -116,8 +121,17 @@ module.exports = function(options) {
                 debug("Layout " + file.layout + " missing: " + filename);
             } else {
                 debug("Processing layout " + file.layout + ": " + filename);
-                file.contents = file.contents.toString();
-                file.contents = Buffer.from(templates[file.layout](file));
+                try {
+                    file.contents = file.contents.toString();
+                    file.contents = Buffer.from(templates[file.layout](file));
+                } catch (e) {
+                    console.log(
+                        "Encountered error while processing " +
+                            filename +
+                            ": " +
+                            e.toString()
+                    );
+                }
             }
         },
         match: options.match,
