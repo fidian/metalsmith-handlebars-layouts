@@ -98,7 +98,7 @@ module.exports = function(options) {
                         try {
                             hb[key](v);
                         } catch (e) {
-                            console.log("Encountered error: " + e.toString()");
+                            console.log("Encountered error: " + e.toString());
                         }
                     });
                 } else {
