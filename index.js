@@ -29,7 +29,7 @@ fs = require("fs");
 path = require("path");
 pluginKit = require("metalsmith-plugin-kit");
 handlebars = require("handlebars");
-handlebarsWax = require("handlebars-wax");
+handlebarsWax = require("@fidian/handlebars-wax");
 
 function loadTemplates(templateDir, hb) {
     var i;
