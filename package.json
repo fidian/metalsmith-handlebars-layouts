@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-handlebars-layouts",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "author": {
     "name": "Tyler Akins"
   },
@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@fidian/handlebars-wax": "^7.4.0",
-    "debug": "^4.3.7",
-    "handlebars": "^4.7.8",
-    "metalsmith-plugin-kit": "^1.7.0"
+    "debug": "^4.4.3",
+    "handlebars": "^4.7.9",
+    "metalsmith-plugin-kit": "^1.8.0"
   },
   "description": "Metalsmith plugin that wraps pages in handlebars layouts.",
   "homepage": "https://github.com/fidian/metalsmith-handlebars-layouts#readme",
